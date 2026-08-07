@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Weather App</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/1163/1163624.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-globes">
+      <div class="globe globe-1"></div>
+      <div class="globe globe-2"></div>
+    </div>
+
+    <div class="app-container">
+      <!-- Search Header -->
+      <header class="search-section">
+        <div class="logo">
+          <i class="fa-solid fa-cloud-sun-rain logo-icon"></i>
+          <span>Sky<span class="accent-text">Pulse</span></span>
+        </div>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Search any city or country..."
+            autocomplete="off"
+          />
+          <button id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Weather Card -->
+      <main class="weather-card">
+        <div class="weather-left">
+          <div class="location-badge">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="location-name">Mumbai, I</span>
+          </div>
+          <h1 id="temperature">28°C</h1>
+          <p id="weather-condition">Partly Cloudy</p>
+        </div>
+
+        <div class="weather-right">
+          <div class="weather-icon-box">
+            <img
+              id="weather-img"
+              src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png"
+              alt="Weather Status"
+            />
+          </div>
+        </div>
+      </main>
+
+      <!-- Stats Grid (All 4 Cards) -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-wind"></i></div>
+          <div class="stat-info">
+            <span>Wind Speed</span>
+            <h4 id="wind-speed">14 km/h</h4>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-droplet"></i></div>
+          <div class="stat-info">
+            <span>Humidity</span>
+            <h4 id="humidity">72%</h4>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
+          <div class="stat-info">
+            <span>Visibility</span>
+            <h4 id="visibility">10 km</h4>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <div class="stat-info">
+            <span>Pressure</span>
+            <h4 id="pressure">1012 hPa</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Cities -->
+      <section class="popular-cities">
+        <h3>Popular Cities</h3>
+        <div class="city-chips">
+          <button class="chip" onclick="getWeather('Pune')">Pune</button>
+          <button class="chip" onclick="getWeather('Patna')">Patna</button>
+          <button class="chip" onclick="getWeather('Delhi')">Delhi</button>
+          <button class="chip" onclick="getWeather('Goa')">Goa</button>
+          <button class="chip" onclick="getWeather('Mumbai')">Mumbai</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="weather.js"></script>
+  </body>
+</html>
