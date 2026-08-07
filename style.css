@@ -295,6 +295,24 @@ body {
   box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
 }
 
+.weather-card,
+.stats-grid {
+  display: none; 
+}
+.popular-cities {
+  display: block; 
+  margin-top: 25px;
+}
+
+.weather-card.active {
+  display: flex !important;
+}
+
+.stats-grid.active {
+  display: grid !important;
+}
+
+
 /* responsive design (tablet, mobile) */
 
 @media (max-width: 768px) {

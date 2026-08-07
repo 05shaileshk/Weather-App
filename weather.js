@@ -12,19 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
-      
       if (!response.ok) {
         alert("City not found!");
         return;
       }
-
       const data = await response.json();
 
-      // 1. Hide state se Show state me convert karein
+      // Search hote hi Weather Card aur Stats Cards ko reveal karein
       weatherCard.classList.add('active');
       statsGrid.classList.add('active');
 
-      // 2. Data render karein
+      // Data rendering logic
       document.getElementById('location-name').textContent = `${data.name}, ${data.sys.country}`;
       document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°C`;
       document.getElementById('weather-condition').textContent = data.weather[0].main;
@@ -44,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else weatherImg.src = 'https://cdn-icons-png.flaticon.com/512/1163/1163624.png';
       }
 
-      // 3. GSAP Animation on Reveal
+      // GSAP Animations on Search
       if (typeof gsap !== 'undefined') {
         gsap.fromTo(".weather-card", 
           { opacity: 0, y: 30, scale: 0.95 }, 
