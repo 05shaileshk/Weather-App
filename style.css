@@ -315,6 +315,8 @@ body {
 
 /* ==========================================
    5. RESPONSIVE DESIGN
+/* ==========================================
+   5. RESPONSIVE DESIGN (TABLET & MOBILE)
    ========================================== */
 @media (max-width: 768px) {
   .search-section {
@@ -336,8 +338,24 @@ body {
     padding: 20px 15px;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+ 
+  .stats-grid.active {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 20px;
+  }
+
+  .weather-left h1 {
+    font-size: 3rem;
+  }
+
+ 
+  .stats-grid.active {
+    grid-template-columns: 1fr !important;
   }
 }
 
